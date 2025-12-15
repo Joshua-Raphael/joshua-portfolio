@@ -16,16 +16,15 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              Hi! I’m a 3rd-year BSIT student passionate about technology, 
+              coding, and creating solutions that make a difference. 
+              I love exploring new ideas, learning continuously, and turning challenges 
+              into opportunities to grow.
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+              My journey in IT is driven by curiosity and the desire to turn innovative ideas 
+              into solutions that truly make a difference.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -35,8 +34,9 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href=""
+                href="https://www.canva.com/design/DAG7jPDNpaw/75Wi0F9iIYT1fc_N683jnw/view?utm_content=DAG7jPDNpaw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h01e165ef1f"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                target="_blank"
               >
                 Download CV
               </a>

@@ -1,34 +1,35 @@
+
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Clinic Management System",
+    description: "A desktop-based clinic management system built using Java and Java Swing, using Notepad (.txt) files for data storage.",
+    image: "/projects/clinicMgt.png",
+    tags: ["Java", "Java Swing", "FIle Storage"],
+    demoUrl: "https://drive.google.com/file/d/1kBkEu6DfdOMek8P7nu_68tRddW_lBvI0/view?usp=drive_link",
+    githubUrl: "",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "OSA Partnership System",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "A web-based system for managing partnerships, allowing multiple admins to handle entries based on their assigned roles.",
+    image: "/projects/partnership.png",
+    tags: ["React", "TailwindCSS", "DRF"],
+    demoUrl: "",
+    githubUrl: "https://github.com/Joshua-Raphael/hcdc-partnership",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Quiz App",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "A quiz app that uses an API to generate questions and tracks scores through a Firebase-powered leaderboard.",
+    image: "/projects/quiz.png",
+    tags: ["React Native", "Firebase", "Trivia API"],
+    demoUrl: "",
+    githubUrl: "https://github.com/Joshua-Raphael/quizApp",
   },
 ];
 
@@ -47,10 +48,10 @@ export const ProjectsSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, key) => (
+          {projects.map((project) => (
             <div
-              key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              key={project.id}
+              className="relative group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-48 overflow-hidden">
                 <img
@@ -62,45 +63,65 @@ export const ProjectsSection = () => {
 
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                  {project.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
+                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
+
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
+                    {/* Optional action icons can go here */}
                   </div>
                 </div>
               </div>
+
+              {(project.githubUrl || project.demoUrl) ? (
+                <div className="absolute left-4 bottom-4 z-30 flex items-center gap-2">
+                  {project.githubUrl ? (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title} GitHub`}
+                      className="bg-primary text-white p-2 rounded-full shadow-md hover:scale-105 transform transition-transform"
+                    >
+                      <Github size={18} />
+                    </a>
+                  ) : null}
+
+                  {project.demoUrl ? (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title} Demo`}
+                      className="bg-primary text-white p-2 rounded-full shadow-md hover:scale-105 transform transition-transform"
+                    >
+                      <ExternalLink size={18} />
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           ))}
+
         </div>
 
         <div className="text-center mt-12">
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/Joshua-Raphael"
           >
             Check My Github <ArrowRight size={16} />
           </a>
